@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Um Sintoma, Uma Vitamina - Ebook Oficial</title>
+  <meta name="description" content="Descubra como pequenas mudanças com vitaminas podem transformar sua saúde. Um sintoma de cada vez. Promoção por tempo limitado!">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7fdfc;
+      margin: 0;
+      color: #222;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .capa {
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    h1 {
+      color: #e69500;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p.subtitulo {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .price {
+      margin: 20px 0;
+      font-size: 1.3rem;
+    }
+
+    .old-price {
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .new-price {
+      color: #28a745;
+      font-size: 2rem;
+      font-weight: bold;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .timer {
+      background: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-size: 1.3rem;
+    }
+
+    .btn-comprar {
+      background: #ff6b00;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-comprar:hover {
+      background: #d85e00;
+    }
+
+    .depoimentos {
+      margin-top: 50px;
+    }
+
+    .depoimentos h2 {
+      font-size: 1.8rem;
+      color: #007B8F;
+      margin-bottom: 20px;
+    }
+
+    .depoimento {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+
+    .depoimento strong {
+      display: block;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 50px;
+      padding-bottom: 30px;
+    }
+
+    .whatsapp {
+      margin-top: 20px;
+      display: block;
+      text-decoration: none;
+      color: #25D366;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="capa ebook nova.png" alt="Capa do Ebook Um Sintoma, Uma Vitamina" class="capa">
+
+    <h1>Um Sintoma, Uma Vitamina</h1>
+    <p class="subtitulo">Descubra como pequenas mudanças com vitaminas podem transformar sua saúde – um sintoma de cada vez.</p>
+
+    <div class="price">
+      De <span class="old-price">R$ 127,00</span> por apenas:
+      <span class="new-price">R$ 49,90</span>
+    </div>
+
+    <div class="timer">
+      ⚠️ Promoção expira em <span id="timer">15:00</span>
+    </div>
+
+    <a href="https://seulinkdecheckout.com" target="_blank" class="btn-comprar">Quero Comprar Agora</a>
+
+    <a href="https://wa.me/5599999999999?text=Tenho%20dúvidas%20sobre%20o%20ebook%20'Um%20Sintoma,%20Uma%20Vitamina'" target="_blank" class="whatsapp">
+      📲 Falar com Suporte via WhatsApp
+    </a>
+
+    <div class="depoimentos">
+      <h2>Veja o que dizem nossos leitores:</h2>
+
+      <div class="depoimento">
+        “Eu tinha queda de cabelo constante e dores de cabeça frequentes. Com o e-book, entendi a importância da vitamina B7. Transformador!”  
+        <strong>— Larissa M., São Paulo</strong>
+      </div>
+
+      <div class="depoimento">
+        “Achei que vitaminas eram bobagem, mas com as explicações detalhadas das autoras, comecei a suplementar e minha disposição mudou completamente.”  
+        <strong>— Rafael T., Belo Horizonte</strong>
+      </div>
+
+      <div class="depoimento">
+        “Simples, direto e extremamente útil. Cada capítulo vale ouro. Já indiquei para minha família toda!”  
+        <strong>— Denise C., Porto Alegre</strong>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 - Dra. Bianca Silveira & Dra. Thamyris Moreira | Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    let time = 15 * 60;
+    const timerEl = document.getElementById('timer');
+
+    function updateTimer() {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      timerEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      time--;
+      if (time < 0) {
+        clearInterval(timerInterval);
+        document.querySelector('.timer').innerHTML = "⏰ Oferta expirada!";
+        document.querySelector('.btn-comprar').style.display = 'none';
+      }
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+  </script>
+
+</body>
+</html>
